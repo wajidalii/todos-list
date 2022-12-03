@@ -1,8 +1,12 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 function Todos(props) {
+  const styles = {
+    minHeight: "46vh",
+    marginBottom: "20px",
+  };
   return (
-    <div className="container">
+    <div className="container" style={styles}>
       <h1 className="text-center">My Todo List</h1>
       {props.myTodos.length ? (
         props.myTodos.map((todo) => (
@@ -11,7 +15,8 @@ function Todos(props) {
               todo={todo}
               key={todo.srNum}
               onDeleteTodo={props.onDeleteTodo}
-            />
+            />{" "}
+            <hr />
           </div>
         ))
       ) : (
