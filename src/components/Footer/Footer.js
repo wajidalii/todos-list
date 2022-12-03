@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
   const styles = {
-    position: "absolute",
-    bottom: "0px",
+    position: "relative",
+    marginTop: "40%",
     width: "100%",
   };
   return (

@@ -7,7 +7,11 @@ function Todos(props) {
       {props.myTodos.length ? (
         props.myTodos.map((todo) => (
           <div>
-            <TodoItem todo={todo} key={todo.srNum} onDelete={props.onDelete} />
+            <TodoItem
+              todo={todo}
+              key={todo.srNum}
+              onDeleteTodo={props.onDeleteTodo}
+            />
           </div>
         ))
       ) : (
