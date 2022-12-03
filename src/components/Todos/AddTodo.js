@@ -8,6 +8,8 @@ export const AddTodo = ({ onAddTodo }) => {
   const submit = (e) => {
     e.preventDefault();
     onAddTodo(title, desc);
+    setTitle("");
+    setDesc("");
   };
   return (
     <div className="container">
@@ -19,6 +21,7 @@ export const AddTodo = ({ onAddTodo }) => {
             type="text"
             placeholder="Enter Title"
             id="title"
+            value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
@@ -33,6 +36,7 @@ export const AddTodo = ({ onAddTodo }) => {
             type="text"
             placeholder="Please add a description"
             id="desc"
+            value={desc}
             onChange={(e) => setDesc(e.target.value)}
             required
           />
