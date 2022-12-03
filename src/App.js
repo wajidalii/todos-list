@@ -2,6 +2,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Todos from "./components/Todos/Todos";
 import Footer from "./components/Footer/Footer";
 import { AddTodo } from "./components/Todos/AddTodo";
+import About from "./components/About";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { useState, useEffect } from "react";
 
@@ -36,12 +38,26 @@ function App() {
   };
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar title={"My Todo List"} searchBar={true} />
-      <AddTodo onAddTodo={onAddTodo} />
-      <Todos myTodos={myTodos} onDeleteTodo={onDeleteTodo} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <AddTodo onAddTodo={onAddTodo} />
+              <Todos myTodos={myTodos} onDeleteTodo={onDeleteTodo} />
+            </>
+          }
+        />
+        <Route
+          path="/showtodos"
+          element={<Todos myTodos={myTodos} onDeleteTodo={onDeleteTodo} />}
+        />
+        <Route path="/about" element={<About />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

@@ -3,7 +3,6 @@ import TodoItem from "./TodoItem";
 function Todos(props) {
   const styles = {
     minHeight: "46vh",
-    marginBottom: "20px",
   };
   return (
     <div className="container" style={styles}>
